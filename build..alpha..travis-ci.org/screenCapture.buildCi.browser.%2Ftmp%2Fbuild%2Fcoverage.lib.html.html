@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-onoff/onoff/onoff.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-onoff/node_modules/onoff/onoff.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-onoff">npmtest-onoff (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-onoff/onoff/onoff.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-onoff/node_modules/onoff/onoff.js</span></h1>
     <h2>
         
         Statements: <span class="metric">20.19% <small>(21 / 104)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-onoff/onoff/</a> &#187; onoff.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-onoff/node_modules/onoff/</a> » onoff.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -923,22 +921,22 @@ var GPIO_ROOT_PATH = '/sys/class/gpio/',
 &nbsp;
 exports.version = '1.1.1';
 &nbsp;
-<span class="fstat-no" title="function not covered" >function pollerEventHandler(err, fd, events) {</span>
-<span class="cstat-no" title="statement not covered" >  var value = this.readSync(),</span>
+<span class="fstat-no" title="function not covered">function pollerEventHandler(err, fd, events) {</span>
+<span class="cstat-no" title="statement not covered">  var value = this.readSync(),</span>
     callbacks = this.listeners.slice(0);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (this.opts.debounceTimeout &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >    setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (this.listeners.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">  if (this.opts.debounceTimeout &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">    setTimeout(<span class="fstat-no" title="function not covered">function () {</span></span>
+<span class="cstat-no" title="statement not covered">      if (this.listeners.length &gt; 0) {</span>
         // Read current value before polling to prevent unauthentic interrupts.
-<span class="cstat-no" title="statement not covered" >        this.readSync();</span>
-<span class="cstat-no" title="statement not covered" >        this.poller.modify(this.valueFd, Epoll.EPOLLPRI | Epoll.EPOLLONESHOT);</span>
+<span class="cstat-no" title="statement not covered">        this.readSync();</span>
+<span class="cstat-no" title="statement not covered">        this.poller.modify(this.valueFd, Epoll.EPOLLPRI | Epoll.EPOLLONESHOT);</span>
       }
     }.bind(this), this.opts.debounceTimeout);
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  callbacks.forEach(<span class="fstat-no" title="function not covered" >function (callback) {</span></span>
-<span class="cstat-no" title="statement not covered" >    callback(err, value);</span>
+<span class="cstat-no" title="statement not covered">  callbacks.forEach(<span class="fstat-no" title="function not covered">function (callback) {</span></span>
+<span class="cstat-no" title="statement not covered">    callback(err, value);</span>
   });
 }
 &nbsp;
@@ -972,59 +970,59 @@ exports.version = '1.1.1';
  *                          // activeLow are true and false. Setting activeLow
  *                          // to true inverts. The default value is false.
  */
-<span class="fstat-no" title="function not covered" >function Gpio(gpio, direction, edge, options) {</span>
-<span class="cstat-no" title="statement not covered" >  var valuePath,</span>
+<span class="fstat-no" title="function not covered">function Gpio(gpio, direction, edge, options) {</span>
+<span class="cstat-no" title="statement not covered">  var valuePath,</span>
     directionSet = false,
     tries = 0;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!(this instanceof Gpio)) {</span>
-<span class="cstat-no" title="statement not covered" >    return new Gpio(gpio, direction, edge, options);</span>
+<span class="cstat-no" title="statement not covered">  if (!(this instanceof Gpio)) {</span>
+<span class="cstat-no" title="statement not covered">    return new Gpio(gpio, direction, edge, options);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (typeof edge === 'object' &amp;&amp; !options) {</span>
-<span class="cstat-no" title="statement not covered" >    options = edge;</span>
-<span class="cstat-no" title="statement not covered" >    edge = undefined;</span>
+<span class="cstat-no" title="statement not covered">  if (typeof edge === 'object' &amp;&amp; !options) {</span>
+<span class="cstat-no" title="statement not covered">    options = edge;</span>
+<span class="cstat-no" title="statement not covered">    edge = undefined;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  options = options || {};</span>
+<span class="cstat-no" title="statement not covered">  options = options || {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.gpio = gpio;</span>
-<span class="cstat-no" title="statement not covered" >  this.gpioPath = GPIO_ROOT_PATH + 'gpio' + this.gpio + '/';</span>
-<span class="cstat-no" title="statement not covered" >  this.opts = {};</span>
-<span class="cstat-no" title="statement not covered" >  this.opts.debounceTimeout = options.debounceTimeout || 0;</span>
-<span class="cstat-no" title="statement not covered" >  this.readBuffer = new Buffer(16);</span>
-<span class="cstat-no" title="statement not covered" >  this.listeners = [];</span>
+<span class="cstat-no" title="statement not covered">  this.gpio = gpio;</span>
+<span class="cstat-no" title="statement not covered">  this.gpioPath = GPIO_ROOT_PATH + 'gpio' + this.gpio + '/';</span>
+<span class="cstat-no" title="statement not covered">  this.opts = {};</span>
+<span class="cstat-no" title="statement not covered">  this.opts.debounceTimeout = options.debounceTimeout || 0;</span>
+<span class="cstat-no" title="statement not covered">  this.readBuffer = new Buffer(16);</span>
+<span class="cstat-no" title="statement not covered">  this.listeners = [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  valuePath = this.gpioPath + 'value';</span>
+<span class="cstat-no" title="statement not covered">  valuePath = this.gpioPath + 'value';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!fs.existsSync(this.gpioPath)) {</span>
+<span class="cstat-no" title="statement not covered">  if (!fs.existsSync(this.gpioPath)) {</span>
     // The pin hasn't been exported yet so export it.
-<span class="cstat-no" title="statement not covered" >    fs.writeFileSync(GPIO_ROOT_PATH + 'export', this.gpio);</span>
+<span class="cstat-no" title="statement not covered">    fs.writeFileSync(GPIO_ROOT_PATH + 'export', this.gpio);</span>
 &nbsp;
     // A hack to avoid the issue described here:
     // https://github.com/raspberrypi/linux/issues/553
     // I don't like this solution, but it enables compatibility with older
     // versions of onoff, i.e., the Gpio constructor was and still is
     // synchronous.
-<span class="cstat-no" title="statement not covered" >    directionSet = false;</span>
-<span class="cstat-no" title="statement not covered" >    while (!directionSet) {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        tries += 1;</span>
-<span class="cstat-no" title="statement not covered" >        fs.writeFileSync(this.gpioPath + 'direction', direction);</span>
-<span class="cstat-no" title="statement not covered" >        directionSet = true;</span>
+<span class="cstat-no" title="statement not covered">    directionSet = false;</span>
+<span class="cstat-no" title="statement not covered">    while (!directionSet) {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        tries += 1;</span>
+<span class="cstat-no" title="statement not covered">        fs.writeFileSync(this.gpioPath + 'direction', direction);</span>
+<span class="cstat-no" title="statement not covered">        directionSet = true;</span>
       } catch (e) {
-<span class="cstat-no" title="statement not covered" >        if (tries === 10000) {</span>
-<span class="cstat-no" title="statement not covered" >          throw e;</span>
+<span class="cstat-no" title="statement not covered">        if (tries === 10000) {</span>
+<span class="cstat-no" title="statement not covered">          throw e;</span>
         }
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (edge) {</span>
-<span class="cstat-no" title="statement not covered" >      fs.writeFileSync(this.gpioPath + 'edge', edge);</span>
+<span class="cstat-no" title="statement not covered">    if (edge) {</span>
+<span class="cstat-no" title="statement not covered">      fs.writeFileSync(this.gpioPath + 'edge', edge);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!!options.activeLow) {</span>
-<span class="cstat-no" title="statement not covered" >      fs.writeFileSync(this.gpioPath + 'active_low', ONE);</span>
+<span class="cstat-no" title="statement not covered">    if (!!options.activeLow) {</span>
+<span class="cstat-no" title="statement not covered">      fs.writeFileSync(this.gpioPath + 'active_low', ONE);</span>
     }
   } else {
     // The pin has already been exported, perhaps by onoff itself, perhaps
@@ -1039,16 +1037,16 @@ exports.version = '1.1.1';
     // gpio utility can set both direction and edge. If there are any
     // errors while attempting to perform the modifications, just keep on
     // truckin'.
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      fs.writeFileSync(this.gpioPath + 'direction', direction);</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      fs.writeFileSync(this.gpioPath + 'direction', direction);</span>
     } catch (ignore) {
     }
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if (edge) {</span>
-<span class="cstat-no" title="statement not covered" >        fs.writeFileSync(this.gpioPath + 'edge', edge);</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      if (edge) {</span>
+<span class="cstat-no" title="statement not covered">        fs.writeFileSync(this.gpioPath + 'edge', edge);</span>
       }
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        fs.writeFileSync(this.gpioPath + 'active_low',</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        fs.writeFileSync(this.gpioPath + 'active_low',</span>
           !!options.activeLow ? ONE : ZERO
         );
       } catch (ignore) {
@@ -1057,12 +1055,12 @@ exports.version = '1.1.1';
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.valueFd = fs.openSync(valuePath, 'r+'); </span>// Cache fd for performance.
+<span class="cstat-no" title="statement not covered">  this.valueFd = fs.openSync(valuePath, 'r+'); </span>// Cache fd for performance.
 &nbsp;
   // Read current value before polling to prevent unauthentic interrupts.
-<span class="cstat-no" title="statement not covered" >  this.readSync();</span>
+<span class="cstat-no" title="statement not covered">  this.readSync();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.poller = new Epoll(pollerEventHandler.bind(this));</span>
+<span class="cstat-no" title="statement not covered">  this.poller = new Epoll(pollerEventHandler.bind(this));</span>
 }
 exports.Gpio = Gpio;
 &nbsp;
@@ -1071,14 +1069,14 @@ exports.Gpio = Gpio;
  *
  * [callback: (err: error, value: number) =&gt; {}] // Optional callback
  */
-Gpio.prototype.read = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  fs.read(this.valueFd, this.readBuffer, 0, 1, 0, <span class="fstat-no" title="function not covered" >function (err, bytes, buf) {</span></span>
-<span class="cstat-no" title="statement not covered" >    if (typeof callback === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      if (err) {</span>
-<span class="cstat-no" title="statement not covered" >        return callback(err);</span>
+Gpio.prototype.read = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">  fs.read(this.valueFd, this.readBuffer, 0, 1, 0, <span class="fstat-no" title="function not covered">function (err, bytes, buf) {</span></span>
+<span class="cstat-no" title="statement not covered">    if (typeof callback === 'function') {</span>
+<span class="cstat-no" title="statement not covered">      if (err) {</span>
+<span class="cstat-no" title="statement not covered">        return callback(err);</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      callback(null, buf[0] === ONE[0] ? 1 : 0);</span>
+<span class="cstat-no" title="statement not covered">      callback(null, buf[0] === ONE[0] ? 1 : 0);</span>
     }
   });
 };
@@ -1088,9 +1086,9 @@ Gpio.prototype.read = <span class="fstat-no" title="function not covered" >funct
  *
  * Returns - number // 0 or 1
  */
-Gpio.prototype.readSync = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  fs.readSync(this.valueFd, this.readBuffer, 0, 1, 0);</span>
-<span class="cstat-no" title="statement not covered" >  return this.readBuffer[0] === ONE[0] ? 1 : 0;</span>
+Gpio.prototype.readSync = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  fs.readSync(this.valueFd, this.readBuffer, 0, 1, 0);</span>
+<span class="cstat-no" title="statement not covered">  return this.readBuffer[0] === ONE[0] ? 1 : 0;</span>
 };
 &nbsp;
 /**
@@ -1099,9 +1097,9 @@ Gpio.prototype.readSync = <span class="fstat-no" title="function not covered" >f
  * value: number                  // 0 or 1
  * [callback: (err: error) =&gt; {}] // Optional callback
  */
-Gpio.prototype.write = <span class="fstat-no" title="function not covered" >function (value, callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var writeBuffer = value === 1 ? ONE : ZERO;</span>
-<span class="cstat-no" title="statement not covered" >  fs.write(this.valueFd, writeBuffer, 0, writeBuffer.length, 0, callback);</span>
+Gpio.prototype.write = <span class="fstat-no" title="function not covered">function (value, callback) {</span>
+<span class="cstat-no" title="statement not covered">  var writeBuffer = value === 1 ? ONE : ZERO;</span>
+<span class="cstat-no" title="statement not covered">  fs.write(this.valueFd, writeBuffer, 0, writeBuffer.length, 0, callback);</span>
 };
 &nbsp;
 /**
@@ -1109,9 +1107,9 @@ Gpio.prototype.write = <span class="fstat-no" title="function not covered" >func
  *
  * value: number // 0 or 1
  */
-Gpio.prototype.writeSync = <span class="fstat-no" title="function not covered" >function (value) {</span>
-<span class="cstat-no" title="statement not covered" >  var writeBuffer = value === 1 ? ONE : ZERO;</span>
-<span class="cstat-no" title="statement not covered" >  fs.writeSync(this.valueFd, writeBuffer, 0, writeBuffer.length, 0);</span>
+Gpio.prototype.writeSync = <span class="fstat-no" title="function not covered">function (value) {</span>
+<span class="cstat-no" title="statement not covered">  var writeBuffer = value === 1 ? ONE : ZERO;</span>
+<span class="cstat-no" title="statement not covered">  fs.writeSync(this.valueFd, writeBuffer, 0, writeBuffer.length, 0);</span>
 };
 &nbsp;
 /**
@@ -1129,35 +1127,35 @@ Gpio.prototype.writeSync = <span class="fstat-no" title="function not covered" >
  *
  * callback: (err: error, value: number) =&gt; {}
  */
-Gpio.prototype.watch = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  var events;</span>
+Gpio.prototype.watch = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">  var events;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  this.listeners.push(callback);</span>
+<span class="cstat-no" title="statement not covered">  this.listeners.push(callback);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (this.listeners.length === 1) {</span>
-<span class="cstat-no" title="statement not covered" >    events = Epoll.EPOLLPRI;</span>
-<span class="cstat-no" title="statement not covered" >    if (this.opts.debounceTimeout &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >      events |= Epoll.EPOLLONESHOT;</span>
+<span class="cstat-no" title="statement not covered">  if (this.listeners.length === 1) {</span>
+<span class="cstat-no" title="statement not covered">    events = Epoll.EPOLLPRI;</span>
+<span class="cstat-no" title="statement not covered">    if (this.opts.debounceTimeout &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">      events |= Epoll.EPOLLONESHOT;</span>
     }
-<span class="cstat-no" title="statement not covered" >    this.poller.add(this.valueFd, events);</span>
+<span class="cstat-no" title="statement not covered">    this.poller.add(this.valueFd, events);</span>
   }
 };
 &nbsp;
 /**
  * Stop watching for hardware interrupts on the GPIO.
  */
-Gpio.prototype.unwatch = <span class="fstat-no" title="function not covered" >function (callback) {</span>
-<span class="cstat-no" title="statement not covered" >  if (this.listeners.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >    if (typeof callback !== 'function') {</span>
-<span class="cstat-no" title="statement not covered" >      this.listeners = [];</span>
+Gpio.prototype.unwatch = <span class="fstat-no" title="function not covered">function (callback) {</span>
+<span class="cstat-no" title="statement not covered">  if (this.listeners.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered">    if (typeof callback !== 'function') {</span>
+<span class="cstat-no" title="statement not covered">      this.listeners = [];</span>
     } else {
-<span class="cstat-no" title="statement not covered" >      this.listeners = this.listeners.filter(<span class="fstat-no" title="function not covered" >function (listener) {</span></span>
-<span class="cstat-no" title="statement not covered" >        return callback !== listener;</span>
+<span class="cstat-no" title="statement not covered">      this.listeners = this.listeners.filter(<span class="fstat-no" title="function not covered">function (listener) {</span></span>
+<span class="cstat-no" title="statement not covered">        return callback !== listener;</span>
       });
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (this.listeners.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >      this.poller.remove(this.valueFd);</span>
+<span class="cstat-no" title="statement not covered">    if (this.listeners.length === 0) {</span>
+<span class="cstat-no" title="statement not covered">      this.poller.remove(this.valueFd);</span>
     }
   }
 };
@@ -1165,8 +1163,8 @@ Gpio.prototype.unwatch = <span class="fstat-no" title="function not covered" >fu
 /**
  * Remove all watchers for the GPIO.
  */
-Gpio.prototype.unwatchAll = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  this.unwatch();</span>
+Gpio.prototype.unwatchAll = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  this.unwatch();</span>
 };
 &nbsp;
 /**
@@ -1174,8 +1172,8 @@ Gpio.prototype.unwatchAll = <span class="fstat-no" title="function not covered" 
  *
  * Returns - string // 'in', or 'out'
  */
-Gpio.prototype.direction = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  return fs.readFileSync(this.gpioPath + 'direction').toString().trim();</span>
+Gpio.prototype.direction = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  return fs.readFileSync(this.gpioPath + 'direction').toString().trim();</span>
 };
 &nbsp;
 /**
@@ -1187,8 +1185,8 @@ Gpio.prototype.direction = <span class="fstat-no" title="function not covered" >
  *                   // 'out' that configure the GPIO as an output with an
  *                   // initial level of high or low respectively.
  */
-Gpio.prototype.setDirection = <span class="fstat-no" title="function not covered" >function (direction) {</span>
-<span class="cstat-no" title="statement not covered" >  fs.writeFileSync(this.gpioPath + 'direction', direction);</span>
+Gpio.prototype.setDirection = <span class="fstat-no" title="function not covered">function (direction) {</span>
+<span class="cstat-no" title="statement not covered">  fs.writeFileSync(this.gpioPath + 'direction', direction);</span>
 };
 &nbsp;
 /**
@@ -1196,8 +1194,8 @@ Gpio.prototype.setDirection = <span class="fstat-no" title="function not covered
  *
  * Returns - string // 'none', 'rising', 'falling' or 'both'
  */
-Gpio.prototype.edge = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  return fs.readFileSync(this.gpioPath + 'edge').toString().trim();</span>
+Gpio.prototype.edge = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  return fs.readFileSync(this.gpioPath + 'edge').toString().trim();</span>
 };
 &nbsp;
 /**
@@ -1208,8 +1206,8 @@ Gpio.prototype.edge = <span class="fstat-no" title="function not covered" >funct
  *              // specified determine what watchers watch for. The valid
  *              // values are: 'none', 'rising', 'falling' or 'both'.
  */
-Gpio.prototype.setEdge = <span class="fstat-no" title="function not covered" >function (edge) {</span>
-<span class="cstat-no" title="statement not covered" >  fs.writeFileSync(this.gpioPath + 'edge', edge);</span>
+Gpio.prototype.setEdge = <span class="fstat-no" title="function not covered">function (edge) {</span>
+<span class="cstat-no" title="statement not covered">  fs.writeFileSync(this.gpioPath + 'edge', edge);</span>
 };
 &nbsp;
 /**
@@ -1217,8 +1215,8 @@ Gpio.prototype.setEdge = <span class="fstat-no" title="function not covered" >fu
  *
  * Returns - boolean
  */
-Gpio.prototype.activeLow = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  return fs.readFileSync(</span>
+Gpio.prototype.activeLow = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  return fs.readFileSync(</span>
     this.gpioPath + 'active_low')[0] === ONE[0] ? true : false;
 };
 &nbsp;
@@ -1232,8 +1230,8 @@ Gpio.prototype.activeLow = <span class="fstat-no" title="function not covered" >
  *                 // activeLow are true and false. Setting activeLow
  *                 // to true inverts. The default value is false.
  */
-Gpio.prototype.setActiveLow = <span class="fstat-no" title="function not covered" >function (invert) {</span>
-<span class="cstat-no" title="statement not covered" >  fs.writeFileSync(this.gpioPath + 'active_low', !!invert ? ONE : ZERO);</span>
+Gpio.prototype.setActiveLow = <span class="fstat-no" title="function not covered">function (invert) {</span>
+<span class="cstat-no" title="statement not covered">  fs.writeFileSync(this.gpioPath + 'active_low', !!invert ? ONE : ZERO);</span>
 };
 &nbsp;
 /**
@@ -1241,19 +1239,19 @@ Gpio.prototype.setActiveLow = <span class="fstat-no" title="function not covered
  *
  * Returns - object // Must not be modified
  */
-Gpio.prototype.options = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  return this.opts;</span>
+Gpio.prototype.options = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  return this.opts;</span>
 };
 &nbsp;
 /**
  * Reverse the effect of exporting the GPIO to userspace. The Gpio object
  * should not be used after calling this method.
  */
-Gpio.prototype.unexport = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >  this.unwatchAll();</span>
-<span class="cstat-no" title="statement not covered" >  fs.closeSync(this.valueFd);</span>
-<span class="cstat-no" title="statement not covered" >  try {</span>
-<span class="cstat-no" title="statement not covered" >    fs.writeFileSync(GPIO_ROOT_PATH + 'unexport', this.gpio);</span>
+Gpio.prototype.unexport = <span class="fstat-no" title="function not covered">function () {</span>
+<span class="cstat-no" title="statement not covered">  this.unwatchAll();</span>
+<span class="cstat-no" title="statement not covered">  fs.closeSync(this.valueFd);</span>
+<span class="cstat-no" title="statement not covered">  try {</span>
+<span class="cstat-no" title="statement not covered">    fs.writeFileSync(GPIO_ROOT_PATH + 'unexport', this.gpio);</span>
   } catch (ignore) {
     // Flow of control always arrives here when cape_universal is enabled on
     // the bbb.
@@ -1262,10 +1260,11 @@ Gpio.prototype.unexport = <span class="fstat-no" title="function not covered" >f
 &nbsp;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 15:58:21 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 16:20:20 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
