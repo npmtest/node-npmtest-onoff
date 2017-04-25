@@ -1,6 +1,6 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "#### test coverage for  [onoff (v1.1.2)](https://github.com/fivdi/onoff#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-onoff.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-onoff) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-onoff.svg)](https://travis-ci.org/npmtest/node-npmtest-onoff)",
+    "description": "#### basic test coverage for  [onoff (v1.1.2)](https://github.com/fivdi/onoff#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-onoff.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-onoff) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-onoff.svg)](https://travis-ci.org/npmtest/node-npmtest-onoff)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "onoff": "*",

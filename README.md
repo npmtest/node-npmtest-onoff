@@ -1,6 +1,6 @@
 # npmtest-onoff
 
-#### test coverage for  [onoff (v1.1.2)](https://github.com/fivdi/onoff#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-onoff.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-onoff) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-onoff.svg)](https://travis-ci.org/npmtest/node-npmtest-onoff)
+#### basic test coverage for  [onoff (v1.1.2)](https://github.com/fivdi/onoff#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-onoff.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-onoff) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-onoff.svg)](https://travis-ci.org/npmtest/node-npmtest-onoff)
 
 #### GPIO access and interrupt detection with Node.js
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-onoff/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-onoff/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-onoff/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-onoff/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-onoff/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-onoff/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-onoff/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-onoff/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-onoff/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-onoff/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-onoff/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-onoff/build/coverage.html/index.html)
 
@@ -88,7 +88,8 @@
     "scripts": {
         "test": "echo \"Tests can only be run manually from the command line. They access hardware GPIOs.\" && exit 1"
     },
-    "version": "1.1.2"
+    "version": "1.1.2",
+    "bin": {}
 }
 ```
 
